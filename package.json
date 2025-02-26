@@ -1,0 +1,29 @@
+{
+  "name": "@oluckyman/sankey-animation-particles-generation",
+  "main": "43db3e6ff86d1bb8@1421.js",
+  "version": "1421.0.0",
+  "homepage": "https://observablehq.com/@oluckyman/sankey-animation-particles-generation",
+  "author": {
+    "name": "Ilyá Belsky",
+    "url": "https://observablehq.com/@oluckyman"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  },
+  "devDependencies": {
+    "vite": "^6.0.11"
+  },
+  "dependencies": {
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
