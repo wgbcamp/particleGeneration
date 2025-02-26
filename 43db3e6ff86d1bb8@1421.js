@@ -43,13 +43,13 @@ function _chart(d3,DOM,width,height,links,sankeyLinkCustom,yScale,cache,particle
   //
   const link = svg.append("g").attr('class', 'links')
     .attr("fill", "none")
-    .attr("stroke-opacity", 0.04)
-    .attr("stroke", "#aaa")
+    .attr("stroke-opacity", 0.6)
+    .attr("stroke", "rgb(0,156,222)")
     .selectAll("path").data(links)
     .join("path")
       // use custom sankey function here because we don't care of the node heights and link widths
       .attr('d', sankeyLinkCustom)
-      .attr("stroke-width", yScale.bandwidth())
+      .attr("stroke-width", yScale.bandwidth())    
   
   
   // Compute particle positions along the lines.
@@ -135,13 +135,14 @@ routes[4].target
 
 function _students(){return(
 JSON.parse(`{  
-        "bit501":       65,   
-        "bit502":      90,   
-        "bit503":       195,   
-        "bit504":      40, 
-        "bit505":      110,
-        "males":		327,
-        "females":		173
+        "bit501":     65,   
+        "bit502":     90,   
+        "bit503":     195,   
+        "bit504":     40, 
+        "bit505":     110,
+        "bit506":     300,
+        "males":		  527,
+        "females":		273
 }`)
 )}
 
@@ -239,7 +240,7 @@ function _colorScale(students,d3)
   const colorThresholds = [students.females / total]
   return d3.scaleThreshold()
    .domain(colorThresholds)
-   .range(['#4AB19D', '#EF3D59'])
+   .range(['rgb(231,172,51)', 'rgb(200,59,43)'])
 }
 
 function _psize(){return(
@@ -257,7 +258,9 @@ function _height(){return(
 function _css(html){return(
 html`<style>
 
-
+html {
+  background-color: rgb(30,75,146);
+}
 </style>`
 )}
 

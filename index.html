@@ -13,5 +13,5 @@ const inspect = Inspector.into(document.body);
 const cells = new Set(["reset", "totalParticles", "density", "speed", "elapsed", "cache", "particles", "source", "students", "routesAbsolute", "routes", "thresholds", "links", "addParticlesMaybe", "sankeyLinkCustom", "yScale", "routeScale", "offsetScale", "speedScale", "colorScale", "psize", "margin", "height", "d3"]);
 const main = runtime.module(define, name => cells.has(name) ? undefined : inspect());
 // const main = runtime.module(define, Inspector.into(document.body));
-
+console.log(runtime.module(define, name => cells.has(name)))
 </script>
