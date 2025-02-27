@@ -49,7 +49,7 @@ function _chart(d3,DOM,width,height,links,sankeyLinkCustom,yScale,cache,particle
     .join("path")
       // use custom sankey function here because we don't care of the node heights and link widths
       .attr('d', sankeyLinkCustom)
-      .attr("stroke-width", yScale.bandwidth())       
+      .attr("stroke-width", yScale.bandwidth() + 5);  
   
       
   // Compute particle positions along the lines.
@@ -198,7 +198,7 @@ function _addParticlesMaybe(density,routeScale,source,cache,speedScale,offsetSca
 
 function _sankeyLinkCustom(yScale,width){return(
 ({ source, target }) => {
-  const curve = 0.37
+  const curve = 0.43
   const halfH = yScale.bandwidth() / 2
   return `
     M 0,${yScale(source) + halfH}
