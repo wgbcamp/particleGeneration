@@ -130,20 +130,18 @@ function _particles(reset)
 }
 
 function _source(routes){return(
-routes[3].target
+routes[2].target
 )}
 
 function _students(){return(
 JSON.parse(`{  
         "bit501":     65,   
-        "bit502":     90,   
+        "bit502":     240,   
         "bit503":     195,   
-        "bit504":     40, 
+        "bit504":     190, 
         "bit505":     110,
-        "bit506":     300,
-        "males":		  577,
-        "females":		273,
-        "dogs": 50
+        "males":		  377,
+        "females":		173
 }`)
 )}
 
