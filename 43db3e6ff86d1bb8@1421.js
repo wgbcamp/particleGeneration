@@ -49,9 +49,9 @@ function _chart(d3,DOM,width,height,links,sankeyLinkCustom,yScale,cache,particle
     .join("path")
       // use custom sankey function here because we don't care of the node heights and link widths
       .attr('d', sankeyLinkCustom)
-      .attr("stroke-width", yScale.bandwidth())    
+      .attr("stroke-width", yScale.bandwidth())       
   
-  
+      
   // Compute particle positions along the lines.
   // This technic relies on path.getPointAtLength function that returns coordinates of a point on the path
   // Another example of this technic:
@@ -141,8 +141,9 @@ JSON.parse(`{
         "bit504":     40, 
         "bit505":     110,
         "bit506":     300,
-        "males":		  527,
-        "females":		273
+        "males":		  577,
+        "females":		273,
+        "dogs": 50
 }`)
 )}
 
@@ -236,15 +237,17 @@ d3.scaleLinear().range([speed, speed + 0.5])
 
 function _colorScale(students,d3)
 {
-  const total = students.males + students.females
-  const colorThresholds = [students.females / total]
+  const total = students.males + students.females;
+  const colorThresholds = [students.females / total];
+  console.log(colorThresholds)
   return d3.scaleThreshold()
-   .domain(colorThresholds)
-   .range(['rgb(231,172,51)', 'rgb(200,59,43)'])
+   .domain([0.2,0.5])
+   .range(['rgb(231,172,51)', 'rgb(200,59,43)', 'rgb(109,140,49)']);
+ 
 }
 
 function _psize(){return(
-7
+6
 )}
 
 function _margin(){return(
@@ -258,9 +261,29 @@ function _height(){return(
 function _css(html){return(
 html`<style>
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 html {
   background-color: rgb(30,75,146);
+  color: white;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
+
+label {
+  color: white;
+}
+
+form {
+  color: black;
+}
+
+span.observablehq--string {
+  opacity: 0;
+}
+
 </style>`
 )}
 
